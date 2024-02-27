@@ -43,7 +43,8 @@ export class ListBooksComponent {
       ]
 
 
-
+  currentListBook=this.books;
+    
   showdetails(b:Book)
   {
    this.selectedBook=b;
@@ -56,12 +57,14 @@ export class ListBooksComponent {
   }
   filterBook(keyword :string)
   {
-    this.listFiltredBook.splice(0, this.listFiltredBook.length);
+    this.listFiltredBook.splice(0, this.listFiltredBook.length);//clear list
     this.books.forEach(element => {
       if (element.title.toLowerCase().includes(keyword.toLowerCase()))
         {    
           this.listFiltredBook.push(element)
         }
+        this.currentListBook=this.listFiltredBook;
+
     });
   }
 
