@@ -48,8 +48,11 @@ export class ListBooksComponent {
    this.selectedBook=b;
   }
 
-  hideBookDetails()
+  hideBookDetails(message : string)
   {
     this.selectedBook=undefined;
+    console.log(message);
   }
+
+
 }

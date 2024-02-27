@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from '../model/book';
 
 @Component({
@@ -8,5 +8,10 @@ import { Book } from '../model/book';
 })
 export class DetailsBookComponent {
 @Input ('book') book? :Book;
+@Output() hideDetailsEvent = new EventEmitter<string>();
 
+sendHideDetailsEvent()
+{
+  this.hideDetailsEvent.emit("Hide Details card")
+}
 }

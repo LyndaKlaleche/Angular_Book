@@ -11,6 +11,6 @@
          Date de publication : {{book!.publishDate.toLocaleDateString()}} <br>
          Prix: {{book!.price}} <br>
       </p>
-      <a href="#" class="btn btn-primary" >Cacher les détails</a>
+      <a href="#" class="btn btn-primary" (click)="sendHideDetailsEvent()">Cacher les détails</a>
     </div>
   </div>

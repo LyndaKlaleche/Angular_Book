@@ -23,4 +23,8 @@
     </tbody>
   </table>
 
-  <app-details-book  [book]="selectedBook" *ngIf="selectedBook!=undefined"></app-details-book>
+  <app-details-book  
+    [book]="selectedBook" 
+    *ngIf="selectedBook!=undefined"
+    (hideDetailsEvent)="hideBookDetails($event)">
+  </app-details-book>
