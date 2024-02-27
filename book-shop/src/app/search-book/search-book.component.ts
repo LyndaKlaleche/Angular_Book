@@ -8,8 +8,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class SearchBookComponent {
   @Output() hideSearchEvent = new EventEmitter<string>();
 
- 
-
   sendKeyWordEvent(keyword :string)
   {
     this.hideSearchEvent.emit(keyword)

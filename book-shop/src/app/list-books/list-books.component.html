@@ -17,7 +17,7 @@
           </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let b of currentListBook">
+        <tr *ngFor="let b of listFiltredBook?listFiltredBook:books">
             <td>{{ b.id }}</td>
             <td>{{ b.title }}</td>
             <td>{{ b.author }}</td>

@@ -11,7 +11,7 @@ import { Book } from '../model/book';
 export class ListBooksComponent {
 
   selectedBook?:Book;
-  listFiltredBook: Book[] = [];
+  
     books=[
       new Book
       (
@@ -42,8 +42,7 @@ export class ListBooksComponent {
          )  
       ]
 
-
-  currentListBook=this.books;
+  listFiltredBook: Book[] =this.books;
     
   showdetails(b:Book)
   {
@@ -57,15 +56,10 @@ export class ListBooksComponent {
   }
   filterBook(keyword :string)
   {
-    this.listFiltredBook.splice(0, this.listFiltredBook.length);//clear list
-    this.books.forEach(element => {
-      if (element.title.toLowerCase().includes(keyword.toLowerCase()))
-        {    
-          this.listFiltredBook.push(element)
-        }
-        this.currentListBook=this.listFiltredBook;
-
-    });
+    this.listFiltredBook=this.books.filter(
+      b => b.title.toLowerCase().includes(keyword.toLowerCase()));
+      
   }
-
 }
+
+
