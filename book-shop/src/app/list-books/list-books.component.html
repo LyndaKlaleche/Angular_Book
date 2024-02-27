@@ -1,0 +1,26 @@
+
+<h1>Liste des livres</h1>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>id </th>
+            <th>Titre </th>
+            <th>Auteur </th>
+            <th>Date de publication </th>
+            <th>Prix</th>
+            <th>Détais</th>
+          </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let b of books">
+            <td>{{ b.id }}</td>
+            <td>{{ b.title }}</td>
+            <td>{{ b.author }}</td>
+            <td>{{ b.publishDate.toLocaleDateString() }}</td>
+            <td>{{ b.price }}</td>
+            <td> <button class="btn btn-info" (click)="showdetails(b)">Détails</button></td>
+        </tr>
+    </tbody>
+  </table>
+
+  <app-details-book  [book]="selectedBook" *ngIf="selectedBook!=undefined"></app-details-book>
