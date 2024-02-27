@@ -8,10 +8,10 @@ import { Book } from '../model/book';
 })
 export class DetailsBookComponent {
 @Input ('book') book? :Book;
-@Output() hideDetailsEvent = new EventEmitter<string>();
+@Output() hideDetailsEvent = new EventEmitter();
 
-sendHideDetailsEvent()
+hideDetails()
 {
-  this.hideDetailsEvent.emit("Hide Details card")
+  this.hideDetailsEvent.emit()
 }
 }

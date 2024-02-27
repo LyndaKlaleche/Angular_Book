@@ -1,5 +1,10 @@
 
 <h1>Liste des livres</h1>
+
+<app-search-book
+  (hideSearchEvent)="filterBook($event)">
+</app-search-book>
+
 <table class="table table-striped">
     <thead class="table-dark">
         <tr>
@@ -12,7 +17,7 @@
           </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let b of books">
+        <tr *ngFor="let b of listeFiltredBook">
             <td>{{ b.id }}</td>
             <td>{{ b.title }}</td>
             <td>{{ b.author }}</td>

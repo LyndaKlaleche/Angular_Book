@@ -11,6 +11,7 @@ import { Book } from '../model/book';
 export class ListBooksComponent {
 
   selectedBook?:Book;
+  listeFiltredBook: Book[] = [];
     books=[
       new Book
       (
@@ -51,8 +52,17 @@ export class ListBooksComponent {
   hideBookDetails(message : string)
   {
     this.selectedBook=undefined;
-    console.log(message);
+   
   }
+  filterBook(keyword :string)
+  {
+    this.books.forEach(element => {
+      if (element.title.includes(keyword))
+        {    console.log(element.title);
 
+          this.listeFiltredBook.push(element)
+        }
+    });
+  }
 
 }
