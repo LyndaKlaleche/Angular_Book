@@ -5,6 +5,10 @@
   (hideSearchEvent)="filterBook($event)">
 </app-search-book>
 
+<div>
+  <button class="btn btn-success" [routerLink]="['/books', 'add']">Ajouter un livre</button>
+</div>
+
 <table class="table table-striped">
     <thead class="table-dark">
         <tr>

@@ -1,1 +1,37 @@
-<p>add-book works!</p>
+<p>add-book works!</p><h2>Ajouter un  nouvel livre</h2>
+
+
+<form (ngSubmit)="addBook(f)" #f="ngForm"> <!--f fait reference à l'objet ngform cree par angular-->
+    <div class="mb-3">
+      <label for="title" class="form-label">Titre</label>
+      <input type="text" class="form-control" id="title" name="title" ngModel required #first="ngModel">
+      <span class="erreur" *ngIf="first.invalid && first.touched">Le champs Titre est obligatoire</span>
+    </div>
+    <div class="mb-3">
+      <label for="author" class="form-label">Auteur</label>
+      <input type="text" class="form-control" id="author" name="author" ngModel required #last="ngModel">
+      <span class="erreur" *ngIf="last.invalid && last.touched">Le champs author est obligatoire</span>
+    </div>
+
+    <div class="mb-3">
+        <label for="publishDate" class="form-label">Date de publication</label>
+        <input type="date" class="form-control" id="publishDate" name="publishDate" ngModel required #last="ngModel">
+        <span class="erreur" *ngIf="last.invalid && last.touched">Le champs Date de publication est obligatoire</span>
+    </div>
+
+    <div class="mb-3">
+        <label for="price" class="form-label">Prix</label>
+        <input type="number" class="form-control" id="price" name="price" ngModel required #last="ngModel">
+        <span class="erreur" *ngIf="last.invalid && last.touched">Le champs Prix de publication est obligatoire</span>
+    </div>
+
+    <div class="mb-3">
+        <label for="cover" class="form-label">Couverture</label>
+        <input type="text" class="form-control" id="cover" name="cover" ngModel  #last="ngModel">
+    </div>
+    
+    <button type="Submit" class="btn btn-primary" [disabled]="f.invalid">Valider</button>
+    
+</form>
+
+

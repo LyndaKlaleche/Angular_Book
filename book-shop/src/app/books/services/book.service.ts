@@ -39,8 +39,6 @@ export class BookService {
 
   constructor() { }
 
-
-
 getBooks()
 {
  // cette syntaxe permet de passser l'adresse mémoire de ce tableau declaré privé 
@@ -49,5 +47,16 @@ getBooks()
  //ce qui assure une certaine sécurité d'accés aux données
 return [...this.books];
 }
+
+
+addBook(book: Book){
+  this.books = [...this.books,book]//ecraser l'ancien état du tab books et ajouter le nouveau element pour permettre
+   //de changer l'adresse memoire du tableau; et de permettre a angular facilement de detecter le changement
+  }
+  
+  getLastID(){
+    return this.books[this.books.length -1].id;
+  }
+
 
 }

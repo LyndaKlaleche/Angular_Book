@@ -23,4 +23,13 @@ getBooks()
 return [...this.authors];
 }
 
+addAuthor(author: Author){
+this.authors = [...this.authors,author]//ecraser l'ancien état du tab authors et ajouter le nouveau element pour permettre
+ //de changer l'adresse memoire du tableau; et de permettre a angular facilement de detctter le changement
+}
+
+getLastID(){
+  return this.authors[this.authors.length -1].id;
+}
+
 }
