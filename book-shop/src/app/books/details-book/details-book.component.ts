@@ -12,6 +12,6 @@ export class DetailsBookComponent {
 
 hideDetails()
 {
-  this.hideDetailsEvent.emit()
+  this.hideDetailsEvent.emit();
 }
 }

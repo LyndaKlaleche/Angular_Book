@@ -8,9 +8,9 @@
       <h5 class="card-title">"{{book!.title}}"</h5>
       <p class="card-text">
          Auteur: {{book!.author}} <br>
-         Date de publication : {{book!.publishDate.toLocaleDateString()}} <br>
+         Date de publication : {{book!.publishDate | date : 'dd/MM/yyyy'}} <br>
          Prix: {{book!.price}} <br>
       </p>
-      <a href="#" class="btn btn-primary" (click)="hideDetails()">Cacher les détails</a>
+      <a  class="btn btn-primary" (click)="hideDetails()">Cacher les détails</a>
     </div>
   </div>
