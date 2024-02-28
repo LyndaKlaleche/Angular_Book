@@ -1,0 +1,19 @@
+<p>list-authors works!</p>
+
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>id </th>
+            <th>Nom</th>
+            <th>Prénom </th>
+          </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of authors">
+            <td>{{ a.id }}</td>
+            <td>{{ a.firstName }}</td>
+            <td>{{ a.lastName }}</td>
+        </tr>
+    </tbody>
+  </table>
